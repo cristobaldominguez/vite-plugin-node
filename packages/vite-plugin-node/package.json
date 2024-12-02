@@ -1,9 +1,16 @@
 {
   "name": "vite-plugin-node",
+  "type": "module",
   "version": "3.1.0",
   "description": "Vite plugin to enable your node server HMR",
-  "author": "Axe",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "node",
+    "hmr"
+  ],
   "license": "MIT",
+  "author": "Axe",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axe-me/vite-plugin-node.git"
@@ -12,21 +19,14 @@
     "url": "https://github.com/axe-me/vite-plugin-node/issues"
   },
   "homepage": "https://github.com/axe-me/vite-plugin-node#readme",
-  "keywords": [
-    "vite",
-    "vite-plugin",
-    "node",
-    "hmr"
-  ],
-  "type": "module",
   "module": "dist/index.js",
-  "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "exports": "./dist/index.js",
   "files": [
     "dist",
     "readme.md"
   ],
+  "sideEffects": false,
   "scripts": {
     "build-dist": "tsc",
     "build": "run-s prebuild build-dist",
@@ -34,11 +34,6 @@
     "lint": "eslint --ext .ts src/**",
     "format": "prettier --write .",
     "prebuild": "rimraf dist && npm run lint && cp ../../README.md ./readme.md"
-  },
-  "dependencies": {
-    "@rollup/pluginutils": "^5.1.0",
-    "chalk": "^4.1.2",
-    "debug": "^4.3.2"
   },
   "peerDependencies": {
     "@swc/core": "^1.2.153",
@@ -48,6 +43,11 @@
     "@swc/core": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
+    "chalk": "^4.1.2",
+    "debug": "^4.3.2"
   },
   "devDependencies": {
     "@marblejs/core": "^4.0.2",
@@ -68,6 +68,6 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.5",
-    "vite": "^5.0.0"
+    "vite": "^6.0.2"
   }
 }
